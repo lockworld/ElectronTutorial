@@ -10,7 +10,7 @@ const createWindow = () => {
         }
     });
 
-    ipcMain.handle('ping', () => 'pong');
+    ipcMain.handle('ping', msg);
     win.loadFile('index.html');
 }
 
@@ -31,3 +31,7 @@ app.on('window-all-closed', () => {
         app.quit();
     }
 });
+
+function msg() {
+    return "MSG is here!";
+}
